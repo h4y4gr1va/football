@@ -7,7 +7,12 @@ require('dotenv').config();
 const port = process.env.PORT || 3000;
 
 // Enable CORS for  React app
-app.use(cors());
+// Update this line
+app.use(cors({
+  origin: 'https://football-beige-six.vercel.app',
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 
 // API key 
 const API_KEY = process.env.FOOTBALL_API_KEY;
